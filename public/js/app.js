@@ -1,8 +1,3 @@
-console.log('Client side javascritp file loaded.')
-
-
-
-
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
