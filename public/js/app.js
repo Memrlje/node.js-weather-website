@@ -16,10 +16,12 @@ weatherForm.addEventListener('submit', (e)=>{
             if(data.error){
                 return messageOne.textContent = data.error
             }
-            document.getElementById("message-1").classList.add('animation');
-            document.getElementById("message-2").classList.add('animation');
+            document.getElementById("message-1").classList.add('animation')
+            document.getElementById("message-2").classList.add('animation')
             messageOne.textContent = data.location
-            messageTwo.textContent = data.forecast
+            messageTwo.textContent = data.forecast      
         })
+        document.getElementById("message-1").classList.remove('animation')
+        document.getElementById("message-2").classList.remove('animation')
     })
 })
