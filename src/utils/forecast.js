@@ -13,7 +13,10 @@ request({url, json: true}, (error, {body})=>{
     }else{
         const currentTemperature = body.currently.temperature
         const chanceOfRain = body.currently.precipProbability
-        callback(undefined, body.daily.data[0].summary + ' Its currently ' + currentTemperature + ' degrees out. There is ' + chanceOfRain + ' % chance of rain.' )
+        const minTemperature = body.daily.data[0].temperatureMin
+        const maxTemperature = body.daily.data[0].temperatureMax
+        callback(undefined, body.daily.data[0].summary + ' Highest estimated temperature for today is ' + maxTemperature +' degrees, and the lowest estimated temperature is ' + minTemperature + 
+        '. Its currently ' + currentTemperature + ' degrees out. There is ' + chanceOfRain + ' % chance of rain.' )
     }
 
 
